@@ -22,6 +22,7 @@ server.post('/videos', async (req, res) => {
 
 
 });
+
 server.get('/videos', async (req) => {
     const search = req.query.search
 
@@ -62,6 +63,6 @@ server.delete('/videos/:id', (req, res) => {
 });
 
 server.listen({
-
-    port: 3333
+    host: '0.0.0.0',
+    port: process.env.port ?? 3333
 });
